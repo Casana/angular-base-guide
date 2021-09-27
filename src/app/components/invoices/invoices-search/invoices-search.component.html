@@ -1,0 +1,23 @@
+<h3>Buscar <small>{{ searchTerm.concept }}</small></h3>
+<hr>
+
+<form (ngSubmit)="search()">
+    <input 
+        type="text" 
+        placeholder="Concepto" 
+        name="concept"
+        [(ngModel)]="searchTerm.concept"
+    />
+
+    <input 
+        type="number" 
+        placeholder="Número de factura" 
+        name="invNumber"
+        [(ngModel)]="searchTerm.invNumber"
+    />
+    <br>
+    <button type="submit">
+        Buscar
+    </button>
+
+</form>

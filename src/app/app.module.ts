@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HplContadorComponent } from './components/heroes/01-contador/hpl-contador.component';
 import { HeroeComponent } from './components/heroes/02-heroe/heroe.component';
 import { HeroesModule } from './components/heroes/heroes.module';
+import { InvoicesModule } from './components/invoices/invoices.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { HeroesModule } from './components/heroes/heroes.module';
   ],
   imports: [
     BrowserModule,
-    HeroesModule
+    HeroesModule,
+    InvoicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
