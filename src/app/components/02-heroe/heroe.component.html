@@ -1,0 +1,14 @@
+<p>heroe works!</p>
+
+<div *ngIf="features.length > 0; else noHabilities">
+  <strong>This are our habilities: </strong>
+  <ul>
+    <li *ngFor="let hability of features; let i = index">{{i + 1}}: {{hability}}</li>
+  </ul>
+  
+  <button (click)="deleteFeature()"> Delete feature</button>
+</div>
+
+<ng-template #noHabilities>
+  <span> This heroe is dumb and useless</span>
+</ng-template>
