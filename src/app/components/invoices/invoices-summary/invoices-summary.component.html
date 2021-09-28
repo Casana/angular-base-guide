@@ -9,7 +9,9 @@
     </div>
 
     <div class="col">
-        <agro-invoices-search></agro-invoices-search>
+        <agro-invoices-search
+            (onNewSearch)="dispatchNewSearch()"
+        ></agro-invoices-search>
     </div>
 
     <div class="col">

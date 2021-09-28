@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HplContadorComponent } from './components/heroes/01-contador/hpl-contador.component';
-import { HeroeComponent } from './components/heroes/02-heroe/heroe.component';
 import { HeroesModule } from './components/heroes/heroes.module';
 import { InvoicesModule } from './components/invoices/invoices.module';
+import { InvoicesService } from './services/invoices/invoices.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,7 @@ import { InvoicesModule } from './components/invoices/invoices.module';
     HeroesModule,
     InvoicesModule
   ],
-  providers: [],
+  providers: [InvoicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
