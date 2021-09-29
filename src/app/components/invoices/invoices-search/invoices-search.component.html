@@ -2,13 +2,14 @@
 <hr>
 
 <form (ngSubmit)="search()">
+    <label for="concept"> Concepto: </label>
     <input 
         type="text" 
         placeholder="Concepto" 
         name="concept"
         [(ngModel)]="searchTerm.concept"
     />
-
+    <label for="invNumber"> Número de factura: </label>
     <input 
         type="number" 
         placeholder="Número de factura" 

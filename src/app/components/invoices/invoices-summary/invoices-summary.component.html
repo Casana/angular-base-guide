@@ -1,23 +1,40 @@
-<p>invoices-summary</p>
-
-<hr>
+<h2>invoices-summary</h2>
 
 <div class="row">
-    
-    <div class="col">
-        <agro-invoice-detail></agro-invoice-detail>
+  <div class="col">
+    <agro-invoices-search
+      (onNewSearch)="dispatchNewSearch($event)"
+    ></agro-invoices-search>
+    <br />
+    <br />
+    <br />
+    <button (click)="dispatchUpdateAvailability()">
+      Actualizar disponibilidad
+    </button>
+  </div>
+
+  <div class="col">
+    <strong>Agro invoices list</strong>
+    <div *ngIf="invoicesList$ | async; let invoices">
+      <ol>
+        <ng-container *ngFor="let invoice of invoices">
+          <li>
+            <ul>
+              <li>Nombre: {{ invoice.name }}</li>
+              <li>Fecha: {{ invoice.date }}</li>
+            </ul>
+            <hr>
+          </li>
+        </ng-container>
+      </ol>
     </div>
-
-    <div class="col">
-        <agro-invoices-search
-            (onNewSearch)="dispatchNewSearch()"
-        ></agro-invoices-search>
-    </div>
-
-    <div class="col">
-        <span>Agro invoices list</span>
-        <!-- <agro-invoices-list></agro-invoices-list> -->
-    </div>
-
-
+    <!-- <agro-invoices-list></agro-invoices-list> -->
+    <br />
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col">
+    <agro-invoice-detail></agro-invoice-detail>
+  </div>
 </div>

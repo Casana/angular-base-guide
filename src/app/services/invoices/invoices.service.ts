@@ -1,20 +1,22 @@
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { InvoiceModel } from "src/app/store/invoices/invoices.model";
+import INVOICES from "./invoices.mock.json";
 
 @Injectable({
   providedIn: "root",
 })
 export class InvoicesService {
-  private _invoicesList: any[] = [
-    { name: "Riegos", date: "", number: 1 },
-    { name: "Riegos", date: "", number: 2 },
-  ];
+  constructor() {}
 
-  constructor() {
-    console.log("Hello from invoices service");
-  }
-
-  search(): any[] {
-    console.log("Getting invoices from a singleton service");
-    return this._invoicesList;
+  search() {
+    const Invoices: Observable<InvoiceModel[]> = new Observable((observer) => {
+      if (INVOICES.length) {
+        observer.next(INVOICES);
+      } else {
+        observer.error("No invoices. Empty result");
+      }
+    });
+    return Invoices;
   }
 }
